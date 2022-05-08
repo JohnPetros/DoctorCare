@@ -1,4 +1,5 @@
 /*======= GERAL ======================*/
+
 :root {
 
     --hue: 190;
@@ -484,7 +485,6 @@ footer .social-links {
     transform: translateY(0);
 } 
 
-
 /*======= RESPONSIVIDADE =====================*/
 
 @media (min-width: 102.4rem) {
@@ -744,7 +744,6 @@ footer .social-links {
          width: 40.4rem;
      }
 
-     
      /*======= FOOTER =====================*/
 
      footer {
@@ -768,5 +767,4 @@ footer .social-links {
      footer p {
          margin-bottom: 0;
      }
-
 }
