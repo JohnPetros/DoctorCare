@@ -5,7 +5,6 @@
 window.addEventListener('scroll', onScroll)
 
 
-onScroll()
 function onScroll() {
     showNavOnScroll()
     showBackToTopButtonOnScroll()
@@ -19,7 +18,6 @@ function onScroll() {
 function activateMenuCurrentSection(section) {
     // linha alvo
     const targetLine = scrollY + innerHeight / 2
-
 
     // verificar se a seção passou da linha
     // quais dados vou precisar?
@@ -39,7 +37,6 @@ function activateMenuCurrentSection(section) {
         sectionTopReachedOrPassedTargetLine
         )
 
-
     // verificar se a base está abaixo da linha alvo
     // quais dados vou precisar?
     console.log(sectionHeight)
@@ -53,19 +50,21 @@ function activateMenuCurrentSection(section) {
     console.log('O fundo da seção passou da linha?', sectionEndPassedTargetLine)
 
     // limites da seção
-    const sectionBoundaries = sectionEndPassedTargetLine && !sectionEndPassedTargetLine
+    const sectionBoundaries = sectionTopReachedOrPassedTargetLine && !sectionEndPassedTargetLine
 
     const sectionId = section.getAttribute('id')
     const menuElement = document.querySelector(`.menu a[href*=${sectionId}]`)
 
 
-    menuElement.classList.remove('active')
     if (sectionBoundaries) {
-       menuElement.classList.add('active')
+        menuElement.classList.add('active')
+    } else {
+        menuElement.classList.remove('active')
     }
 }
 
 function showNavOnScroll() {
+    const navigation = document.querySelector('nav')
     if (scrollY > 0) {
         navigation.classList.add('scroll')
     } else {
@@ -74,7 +73,7 @@ function showNavOnScroll() {
 }
 
 function showBackToTopButtonOnScroll() {
-    console.log(scrollY)
+    // console.log(scrollY)
     if (scrollY > 550) {
         backToTopButton.classList.add('show')
     } else {
