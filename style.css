@@ -231,9 +231,7 @@ body.menu-expanded .menu {
 
     transition: transform 400ms;
     transform: translateY(0);
-
 }
-
 
 .menu ul:nth-child(1) {
     display: flex;
